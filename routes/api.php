@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\pastelaria\ClientesController;
+use App\Http\Controllers\pastelaria\PedidosController;
+use App\Http\Controllers\pastelaria\ProdutosController;
+use App\Models\pastelaria\Pedidos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +22,27 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+
+
+Route::prefix('pastelaria/adm')->group(function () {
+
+    Route::post('/criar', [ProdutosController::class, 'store'])->name("CadastraProduto");
+    Route::delete('/apagar/{id}', [ProdutosController::class, 'destroy'])->name("DeletarProduto");
+    Route::post('/update', [ProdutosController::class, 'update'])->name("AtualizarProduto");
+    Route::get('/produtos',[ProdutosController::class, 'index'] )->name("ListaDeProduto");
+    Route::post('/clientes/cadastrar',[ClientesController::class , 'store'] )->name("cadastrarCliente");
+    Route::post('/pedidos/cadastrar',[PedidosController::class , 'store'] )->name("cadastrarPedido");
+    Route::get('/clientes/conta/{id}',[ClientesController::class , 'show'] )->name("minhaConta");
+    Route::post('/clientes/conta/update',[ClientesController::class , 'update'] )->name("minhaContaUpdate");
+
+});
+
+
+
+Route::delete('pastelaria/adm/clientes/conta/delete/{id}',[ClientesController::class , 'destroy' ] );
+Route::get('pastelaria/carrinho',[PedidosController::class , 'carrinho' ] )->name("carrinhoDeCompras");
+Route::delete('/pastelaria/carrinho/excluir/{id}',[PedidosController::class , 'deletar'] )->name("minhaContaUpdate");
+

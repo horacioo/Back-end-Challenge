@@ -13,17 +13,29 @@ return new class extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome')->unique();/*não quero ter dois produtos com o mesmo nome*/
-            $table->double('preco',10,2);
+            $table->string('nome');
+            $table->decimal('preco', 8, 2);
             $table->string('foto');
             $table->timestamps();
             $table->softDeletes();
         });
     }
+    /*public function up()
+    {
+        Schema::create('produtos', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome');
+            $table->double('preco',10,2);
+            $table->string('foto');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }*/
 
     /**
      * Reverse the migrations.
