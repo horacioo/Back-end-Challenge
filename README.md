@@ -1,6 +1,6 @@
 
 
-<p>1 executar as migrations  php artisan make:migration</p>
+<p>1 executar as migrations  php artisan <b>make:migration</b></p>
 <p>2 alterar a variável APP_URL dentro do arquivo ".env"</p>
 <p>3 os endpoints de update, que deveriam estar como put, estão como post, pois meu xampp apresentou problemas quando tentei liberar esse "verbo"</p>
 
@@ -13,8 +13,6 @@
 
 <p>obs.: o endereço deve ser alterado para se adequar ao endereço de instalação essa parte "http://localhost/Back-end-Challenge/pastelaria/public/" é o que está na minha máquina</p>
 
-
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 
 <p>Em caso de dúvidas, estou a disposição no <a href="https://api.whatsapp.com/send?phone=5513991159522" target='alt'>whatsapp</a> ! </p>
