@@ -2,7 +2,7 @@
 
 <p>1 executar as migrations  php artisan <b>make:migration</b></p>
 <p>2 alterar a variável APP_URL dentro do arquivo ".env"</p>
-<p>3 os endpoints de update, que deveriam estar como put, estão como post, pois meu xampp apresentou problemas quando tentei liberar esse "verbo"</p>
+<p>3 os endpoints de update, que deveriam estar como "put", estão como post, pois meu xampp apresentou problemas quando tentei liberar esse "verbo"</p>
 
 
 
